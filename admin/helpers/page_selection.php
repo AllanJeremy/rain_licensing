@@ -1,7 +1,7 @@
 <?php
 const ACTIVE_CLASS = "active";
 $page = &$_GET["p"];
-$page_title = $active_page = $license_css_class = $config_class = $payment_class = $api_css_class= "";
+$page_title = $active_page = $currency_css_class =  $license_css_class = $config_class = $payment_class = $api_css_class= "";
 $ext = "php";#File extension for the active_page files
 
 switch(strtolower(htmlspecialchars($page)))
@@ -20,13 +20,19 @@ switch(strtolower(htmlspecialchars($page)))
   case "payments":
     $active_page = "page_payments.$ext";
     $page_title = "payments";
-    $license_css_class = ACTIVE_CLASS;
+    $payment_class = ACTIVE_CLASS;
   break;
   case "api":
   case "api_keys":
     $active_page = "page_api_keys.$ext";
     $page_title = "API";
     $api_css_class = ACTIVE_CLASS;
+  break;
+  case "currency":
+  case "currencies":
+    $active_page = "page_currencies.$ext";
+    $page_title = "currencies";
+    $currency_css_class = ACTIVE_CLASS;
   break;
   default:
     header("Location:?p=licenses");#Redirect to the license page

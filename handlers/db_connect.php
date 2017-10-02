@@ -2,7 +2,7 @@
 define('DB_HOST','localhost');
 define('DB_USERNAME','root');
 define('DB_PASSWORD','');
-define('DB_NAME','rain');
+define('DB_NAME','licenses');
 
 $dbCon = new mysqli(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);//create a new conn if no connection exists
 
